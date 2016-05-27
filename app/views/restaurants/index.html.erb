@@ -1,0 +1,21 @@
+<h1>
+	<%= @city.name %> Restaurants
+</h1>
+<hr />
+
+<% if @restaurants.any? %>
+	<ul>
+		<% @restaurants.each do |restaurant| %>
+			<li>
+				<%= link_to restaurant.name, city_restaurant_path(@city, restaurant) %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<h3>No restaurants, please add one</h3>
+<% end %>
+
+<hr />
+
+<%= link_to 'New Restaurant', new_city_restaurant_path(@city) %>
+<%= link_to 'Back', city_path(@city) %>

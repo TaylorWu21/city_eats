@@ -1,0 +1,27 @@
+<h1><%= @restaurant.name %></h1>
+<h3><%= @restaurant.status %></h3>
+<hr />
+
+<span>Food Type:</span>
+<span><%= @restaurant.food_type %></span>
+
+<span>Cost Rating:</span>
+<span><%= @restaurant.cost_rating %></span>
+
+<span>Open:</span>
+<span><%= @restaurant.open %></span>
+
+<span>Take out:</span>
+<span><%= @restaurant.take_out %></span>
+
+<span>Alcohol:</span>
+<span><%= @restaurant.alcohol %></span>
+
+<hr />
+
+<%= link_to 'Edit', edit_city_restaurant_path(@city, @restaurant) %>
+
+<%= link_to 'Delete', city_restaurant_path(@city, @restaurant), method: :delete, data: {confirm: 'Really delete?'} %>
+
+<%= link_to "#{@city.name} restaurants",
+	city_restaurants_path(@city) %>

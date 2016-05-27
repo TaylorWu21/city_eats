@@ -1,0 +1,14 @@
+<h1>
+	<%= @city.name %>
+</h1>
+<hr />
+
+<p>Year Established: <%= @city.year_est %></p>
+<p>Population: <%= @city.population %></p>
+<%= link_to 'Restaurant', city_restaurants_path(@city) %>
+
+<hr />
+
+<%= link_to 'Edit', edit_city_path(@city) %>
+<%= link_to 'Delete', city_path(@city), method: :delete, data: {confirm: 'Really delete?'} %>
+<%= link_to 'All Cities', cities_path %>

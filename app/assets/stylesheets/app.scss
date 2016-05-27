@@ -1,0 +1,22 @@
+html {
+	background-color: lightgrey;
+}
+
+.red_text {
+	color: red;
+}
+
+.flash {
+	text-align: center;
+	width: 50%;
+	font-size: 20px;
+	font-style: italic;
+	border-radius: 10px;
+	margin: 0 auto;
+}
+
+.flash.success {
+	background-color: green;
+	color: white;
+	text-transform: uppercase;
+}

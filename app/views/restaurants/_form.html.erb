@@ -1,0 +1,20 @@
+<%= form_for [@city, @restaurant] do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :food_type %>
+	<%= f.text_field :food_type %>
+
+	<%= f.label :cost_rating %>
+	<%= f.select :cost_rating, Restaurant.ratings %>
+
+	<%= f.label :open %>
+	<%= f.select :open, [true, false] %>
+
+	<%= f.label :take_out %>
+	<%= f.select :take_out, [true, false] %>
+
+	<%= f.label :alcohol %>
+	<%= f.select :alcohol, [true, false] %>
+	<%= f.submit %>
+<% end %>

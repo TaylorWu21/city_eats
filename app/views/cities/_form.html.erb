@@ -1,0 +1,25 @@
+<% if @city.errors.any? %>
+<div class='red_text'>
+	<h3>Errors:</h3>
+		<ul>
+			<% @city.errors.full_messages.each do |message| %>
+				<li>
+					<%= message %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for @city do |f| %>
+	<%= f.label :name, 'City Name: ' %>
+	<%= f.text_field :name %>
+
+	<%= f.label :year_est, 'Year Established: ' %>
+	<%= f.select :year_est, ((Time.zone.now.year - 100)..(Time.zone.now.year + 1)).to_a.reverse %>
+
+	<%= f.label :population, 'Population: ' %>
+	<%= f.number_field :population %>
+
+	<%= f.submit %>
+<% end %>

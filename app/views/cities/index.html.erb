@@ -1,0 +1,19 @@
+<h1>Cities</h1>
+<hr />
+
+<% if @cities.any? %>
+	<ul>
+		<% @cities.each do |city| %>
+		<li>
+			<%= link_to city.name, city_path(city) %>
+		</li>
+		</ul>
+		<% end %>
+<% else %>
+	<h3>No cities, create one.</h3>
+
+<% end %>
+
+<hr />
+
+<%= link_to 'New City', new_city_path %>
